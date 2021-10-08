@@ -1,0 +1,15 @@
+﻿<Window x:Class="TeklaFusionAppExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeklaFusionAppExample"
+        xmlns:ui="http://schemas.trimble.com/fusion"
+        mc:Ignorable="d"
+        Title="{DynamicResource Example.Title}"
+        Style="{DynamicResource Theme.Window.Style}"
+        ShowInTaskbar="False" 
+        WindowStartupLocation="CenterOwner"
+        Height="400" Width="400">
+    <ui:PublishedView ViewName="Example.Example" />
+</Window>
