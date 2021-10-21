@@ -10,6 +10,6 @@
         Style="{DynamicResource Theme.Window.Style}"
         ShowInTaskbar="False" 
         WindowStartupLocation="CenterOwner"
-        Height="400" Width="400">
+        SizeToContent="Height" Width="400">
     <ui:PublishedView ViewName="Example.Example" />
 </Window>

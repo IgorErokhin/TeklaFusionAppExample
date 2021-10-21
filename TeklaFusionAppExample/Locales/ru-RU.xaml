@@ -3,6 +3,8 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <sys:String x:Key="Example.Title">Пример</sys:String>
+    <sys:String x:Key="Example.Profile">Профиль</sys:String>
+    <sys:String x:Key="Example.Material">Материал</sys:String>
     <sys:String x:Key="Example.Ok">ОК</sys:String>
     <sys:String x:Key="Example.Close">Закрыть</sys:String>
 

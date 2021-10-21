@@ -6,6 +6,26 @@ namespace TeklaFusionAppExample
 {
     public class ExampleViewModel : ViewModel
     {
+        private string profile;
+        public string Profile
+        {
+            get { return profile; }
+            set { SetValue(ref profile, value); }
+        }
+
+        private string material;
+        public string Material
+        {
+            get { return material; }
+            set { SetValue(ref material, value); }
+        }
+
+        public ExampleViewModel()
+        {
+            Profile = "HI300-15-20*300";
+            Material = "C245";
+        }
+
         [CommandHandler]
         public void OkCommand()
         {
@@ -13,8 +33,8 @@ namespace TeklaFusionAppExample
             if (model.GetConnectionStatus())
             {
                 Beam beam = new Beam(new Point(0, 0, 0), new Point(1000, 0, 0));
-                beam.Profile.ProfileString = "I30B1_20_93";
-                beam.Material.MaterialString = "C245";
+                beam.Profile.ProfileString = Profile;
+                beam.Material.MaterialString = Material;
                 
                 if(beam.Insert())
                 {
