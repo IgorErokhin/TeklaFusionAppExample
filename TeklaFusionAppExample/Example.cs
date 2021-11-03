@@ -1,5 +1,6 @@
 ﻿using Fusion;
 using System;
+using Tekla.Structures;
 
 [assembly: App.Settings(
     Culture = "en-US",
@@ -15,13 +16,31 @@ using System;
 namespace TeklaFusionAppExample
 {
     [LocalizedResources("Locales/en-US.xaml")]
-    [LocalizedResources("Locales/ru-RU.xaml")]
+    [LocalizedResources("Locales/ru-RU.xaml", Culture ="ru-RU")]
     public class ExampleApp : App
     {
         [STAThread]
         public static void Main()
         {
-            Start(new ExampleApp());
+            string lang = string.Empty;
+            string culture = "en-US";
+            if (TeklaStructuresSettings.GetAdvancedOption("XS_LANGUAGE", ref lang))
+            {
+                switch (lang)
+                {
+                    case "ENGLISH":
+                        culture = "en-US";
+                        break;
+                    case "RUSSIAN":
+                        culture = "ru-RU";
+                        break;
+                    default:
+                        culture = "en-US";
+                        break;
+                }
+            }
+
+            Start(new ExampleApp(), new SettingsOverrides() { Culture = culture });
         }
 
         [PublishedView("App.MainWindow")]
